@@ -21,12 +21,13 @@ export default function Page() {
 
         <div className="hero-content">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Design e software para impulsionar marcas e produtos digitais
+            Desenvolvendo a sua marca: <br></br> do design ao software
           </h1>
 
           <p className="mt-4 text-base md:text-lg">
-            Soluções completas para marcas que precisam unir identidade forte
-            com engenharia de excelência.
+            Branding, software e soluções digitais para estruturar marcas,
+            organizar processos e transformar ideias em operações claras,
+            humanas e eficientes.
           </p>
 
           <div className="flex flex-col items-center md:flex-row justify-center md:gap-5">
@@ -62,11 +63,10 @@ export default function Page() {
           aria-labelledby="titulo-servicos"
         >
           <h2 id="titulo-servicos" className="section-title">
-            Serviços profissionais para sua solução digital
+            Serviços profissionais para desenvolver sua marca
           </h2>
           <p className="mt-2 max-w-xl text-base">
-            A Savatto entrega desde identidade visual até desenvolvimento
-            avançado, garantindo consistência, propósito e performance.
+            A Savatto atua da identidade visual à estruturação digital completa, unindo design humano, engenharia de software e organização de fluxos para que marcas funcionem com clareza, consistência e propósito.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 servicos-grid">

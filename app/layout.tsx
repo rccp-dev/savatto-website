@@ -10,7 +10,10 @@ export const metadata: Metadata = {
     template: "%s | Savatto",
   },
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any"},
+      { url: "/icon.png", type: "image/png"},
+    ],
   },
   description:
     "Savatto - Design & Software. Desenvolvendo sua marca junto com você!",
@@ -20,23 +23,23 @@ export const metadata: Metadata = {
       "Savatto - Design & Software. Desenvolvendo sua marca junto com você!",
     url: "https://savatto.vercel.app",
     siteName: "Savatto",
-    images: [
+    /*images: [
       {
         url: "",
         width: 0,
         height: 0,
       },
-    ],
+    ],*/
     locale: "pt_BR",
     type: "website",
   },
-  twitter: {
+  /*twitter: {
     card: "summary_large_image",
     title: "Savatto",
     description:
       "Savatto - Design & Software. Desenvolvendo sua marca junto com você!",
     images: [""],
-  },
+  },*/
 };
 
 export default function RootLayout({
@@ -44,22 +47,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
+  const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Savatto",
     url: "https://savatto.vercel.app",
     logo: "https://savatto.vercel.app/logo.svg",
     sameAs: ["https://www.instagram.com/savatto.co"],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+5516993066312",
-        contactType: "customer service",
-        areaServed: "BR",
-        availableLanguage: ["Portuguese"],
-      },
-    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+5516993066312",
+      contactType: "customer service",
+      areaServed: "BR",
+      availableLanguage: "Portuguese",
+    },
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Savatto",
+    url: "https://savatto.vercel.app",
+    publisher: {
+      "@type": "Organization",
+      name: "Savatto",
+    },
   };
 
   return (
@@ -74,13 +86,23 @@ export default function RootLayout({
           software, desenvolvimento web, Notion, sistema para empresa, automações,
           Savatto, sava, desenvolvimento"
         />
+
         <Script
-          id="structured-data"
+          id="organization-jsonld"
           type="application/ld+json"
           strategy="afterInteractive"
         >
-          {JSON.stringify(jsonLd)}
+          {JSON.stringify(organizationJsonLd)}
         </Script>
+
+        <Script
+          id="website-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify(websiteJsonLd)}
+        </Script>
+
         <meta
           name="google-site-verification"
           content="rQpVRVweNzG_pUJ906JyQ1Y5ycNC1RA63rNmzAthlKo"
