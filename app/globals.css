@@ -75,11 +75,11 @@ a:focus {
   }
 
   .hero-section {
-    @apply flex relative justify-center items-center h-screen;
+    @apply relative flex justify-center items-center h-screen overflow-hidden rounded-b-[5rem];
   }
 
   .hero-background {
-    @apply hidden md:block absolute inset-0 -z-10;
+    @apply absolute inset-0 z-0 hidden md:block;
   }
 
   .hero-content {

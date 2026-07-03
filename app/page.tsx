@@ -11,14 +11,14 @@ export default function Page() {
         <div className="hero-background">
           <Image
             fill
-            src="/hero.jpg"
+            src="/hero-temp.jpg"
             alt="Background Savatto"
             style={{ objectFit: "cover" }}
             priority
           />
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
         </div>
-
+      
         <div className="hero-content">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
             Desenvolvendo a sua marca: <br></br> do design ao software
